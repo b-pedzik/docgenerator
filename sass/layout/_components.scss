@@ -1,0 +1,606 @@
+//Daux.io Blue
+$sidebar-background: #f7f7f7;
+$sidebar-hover: #c5c5cb;
+$lines: #e7e7e9;
+$dark: #3f4657;
+$light: #82becd;
+$text: #2d2d2d;
+$syntax-string: #022e99;
+$syntax-comment: #84989b;
+$syntax-number: #2f9b92;
+$syntax-label: #840d7a;
+
+/* ===========================================================================================
+Homepage
+============================================================================================== */
+
+.homepage-hero {
+    padding-top: 60px !important;
+    background-color: $light;
+    border-radius: 0px;
+    border: none;
+    color: $dark;
+    overflow: hidden;
+    padding-bottom: 0;
+    margin-bottom: 0;
+
+    .text-center {
+        font-weight: bold;
+        margin: 10px 0px;
+    }
+
+    h2 {
+        margin: 20px 0px;
+    }
+}
+
+.hero-buttons.container-fluid {
+    padding: 20px 0px;
+    background-color: $sidebar-hover;
+
+    .btn-hero.btn {
+        padding: 20px 30px;
+        border-radius: 0px;
+        text-shadow: none;
+        border: none;
+        margin: 0px 10px;
+        text-transform: uppercase;
+        border: 5px solid $dark;
+
+        @media (max-width: 767px) {
+            display: block; margin-bottom: 10px;
+        }
+
+        &.btn-secondary {
+            background-color: $sidebar-hover;
+            color: $dark;
+        }
+
+        &.btn-primary {
+            background-color: $dark;
+            color: $sidebar-background;
+        }
+    }
+}
+
+.homepage-content.container-fluid {
+    // color: white;
+    // background-color: $text;
+    background-color: white;
+    padding: 40px 0px;
+
+    ul, ol {
+        padding: 20px 0px;
+        margin: 0 0 10px 0px;
+
+        li {
+            list-style: none;
+            padding-bottom: 5px;
+
+            &:before {
+                content: '';
+                width: 0px;
+                height: 0px;
+                border: 3px solid transparent;
+                border-left: 3px solid $light;
+                float: left;
+                display: block;
+                margin: 6px;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        padding: 40px 20px;
+    }
+}
+
+.homepage-footer.container-fluid {
+    background-color: $dark;
+    border-radius: 0px;
+    color: light;
+    border: none;
+
+    @media (max-width: 767px) {
+        padding: 0 20px;
+    }
+
+    .footer-nav {
+        margin: 40px 0px;
+
+        li {
+            a {
+                font-size: 16px;
+                line-height: 32px;
+
+                &:hover {
+                    color: $light;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .twitter {
+        margin-top: 20px;
+    }
+
+        .twitter:first-child {
+            margin-top: 40px;
+        }
+}
+
+//100% Height Columns
+.container-fluid {
+
+    &.fluid-height {
+        height: 100%;
+    }
+}
+
+.columns {
+    height: 100%;
+    
+    .left-column {
+        background: $color-2;
+        overflow-x: hidden;
+        position: relative;
+        
+        @media (min-width: 767px) {
+          height: 100%;
+        }
+    }
+
+    .right-column {
+        .content-page {
+            min-height: 100%;
+            background-color: white;
+        }
+    }
+}
+
+.content-area, .article-tree {
+    overflow: auto;
+    padding: 0px;
+
+    @media (min-width: 767px) {
+        height: 100%;
+    }
+}
+
+//mobile friendly sub-nav
+.responsive-collapse {
+    padding: 10px 15px;
+    display: none;
+
+    @media (max-width: 767px) {
+        display: block;
+    }
+}
+
+//CSS For Fluid Tables
+@media only screen and (max-width: 800px) {
+
+    /* Force table to not be like tables anymore */
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+        border: none;
+    }
+
+        /* Hide table headers (but not display: none;, for accessibility) */
+        thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+    tr {
+        margin-bottom: 10px;
+        border-bottom: 2px solid #ccc;
+
+        td, th {
+            border: 1px solid #ccc;
+            border-bottom: none;
+        }
+    }
+
+    td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50% !important;
+        white-space: normal;
+        text-align: left;
+    }
+
+        td:before {
+            /* Now like a table header */
+            position: absolute;
+            /* Top/left values mimic padding */
+            top: 6px;
+            left: 6px;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        /* Label the data */
+        td:before {
+            content: attr(data-title);
+        }
+}
+
+
+
+/* ===========================================================================================
+Markdown editor
+============================================================================================== */
+
+.editor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 20px;
+    padding-bottom: 100px;
+    min-height: 100%;
+    height: auto;
+    display: none;
+
+    h3 {
+        width: 100% !important;
+    }
+
+    &.paddingTop {
+        padding-top: 50px;
+    }
+}
+
+#markdown_editor {
+    width: 85%;
+    margin: 0 auto;
+    padding: 10px;
+    height: auto;
+    font-size: 16px;
+    min-height: 100px;
+    font-family: "Ubuntu Mono", "Consolas", monospace;
+    display: block;
+}
+
+
+
+/* ===========================================================================================
+Code Highlighting
+============================================================================================== */
+
+.hljs {
+    display: block;
+    padding: 0.5em;
+}
+
+.hljs,
+.hljs-subst,
+.hljs-tag .hljs-title,
+.hljs-lisp .hljs-title,
+.hljs-clojure .hljs-built_in,
+.hljs-nginx .hljs-title {
+    color: $dark;
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-constant,
+.hljs-parent,
+.hljs-tag .hljs-value,
+.hljs-rules .hljs-value,
+.hljs-rules .hljs-value .hljs-number,
+.hljs-preprocessor,
+.hljs-ruby .hljs-symbol,
+.hljs-ruby .hljs-symbol .hljs-string,
+.hljs-aggregate,
+.hljs-template_tag,
+.hljs-django .hljs-variable,
+.hljs-smalltalk .hljs-class,
+.hljs-addition,
+.hljs-flow,
+.hljs-stream,
+.hljs-bash .hljs-variable,
+.hljs-apache .hljs-tag,
+.hljs-apache .hljs-cbracket,
+.hljs-tex .hljs-command,
+.hljs-tex .hljs-special,
+.hljs-erlang_repl .hljs-function_or_atom,
+.hljs-markdown .hljs-header {
+    color: $syntax-string;
+}
+
+.hljs-comment,
+.hljs-annotation,
+.hljs-template_comment,
+.hljs-diff .hljs-header,
+.hljs-chunk,
+.hljs-markdown .hljs-blockquote {
+    color: $syntax-comment;
+}
+
+.hljs-number,
+.hljs-date,
+.hljs-regexp,
+.hljs-literal,
+.hljs-smalltalk .hljs-symbol,
+.hljs-smalltalk .hljs-char,
+.hljs-go .hljs-constant,
+.hljs-change,
+.hljs-markdown .hljs-bullet,
+.hljs-markdown .hljs-link_url {
+    color: $syntax-number;
+}
+
+.hljs-label,
+.hljs-javadoc,
+.hljs-ruby .hljs-string,
+.hljs-decorator,
+.hljs-filter .hljs-argument,
+.hljs-localvars,
+.hljs-array,
+.hljs-attr_selector,
+.hljs-important,
+.hljs-pseudo,
+.hljs-pi,
+.hljs-doctype,
+.hljs-deletion,
+.hljs-envvar,
+.hljs-shebang,
+.hljs-apache .hljs-sqbracket,
+.hljs-nginx .hljs-built_in,
+.hljs-tex .hljs-formula,
+.hljs-erlang_repl .hljs-reserved,
+.hljs-prompt,
+.hljs-markdown .hljs-link_label,
+.hljs-vhdl .hljs-attribute,
+.hljs-clojure .hljs-attribute,
+.hljs-coffeescript .hljs-property {
+    color: $syntax-label;
+}
+
+.hljs-keyword,
+.hljs-id,
+.hljs-phpdoc,
+.hljs-title,
+.hljs-built_in,
+.hljs-aggregate,
+.hljs-css .hljs-tag,
+.hljs-javadoctag,
+.hljs-phpdoc,
+.hljs-yardoctag,
+.hljs-smalltalk .hljs-class,
+.hljs-winutils,
+.hljs-bash .hljs-variable,
+.hljs-apache .hljs-tag,
+.hljs-go .hljs-typename,
+.hljs-tex .hljs-command,
+.hljs-markdown .hljs-strong,
+.hljs-request,
+.hljs-status {
+    font-weight: bold;
+}
+
+.hljs-markdown .hljs-emphasis {
+    font-style: italic;
+}
+
+.hljs-nginx .hljs-built_in {
+    font-weight: normal;
+}
+
+.hljs-coffeescript .hljs-javascript,
+.hljs-javascript .hljs-xml,
+.hljs-tex .hljs-formula,
+.hljs-xml .hljs-javascript,
+.hljs-xml .hljs-vbscript,
+.hljs-xml .hljs-css,
+.hljs-xml .hljs-cdata {
+    opacity: 0.5;
+}
+
+
+
+
+
+/* ===========================================================================================
+Componenets
+============================================================================================== */
+a {
+    color: $light;
+}
+
+.btn {
+    &.btn-sidebar {
+        padding: 7px 10px;
+        background-color: rgba($color-3, .4);
+        border: none;
+        margin-right: 0.4em;
+        
+        @media (max-width: 768px) {
+          display: inline-block;
+        }
+
+        @media (min-width: 768px) {
+            display: none;
+        }
+
+        .icon-bar {
+            display: block;
+            width: 18px;
+            height: 2px;
+            margin-top: 2px;
+            margin-bottom: 3px;
+            background-color: rgba($color-1, .4);;
+        }
+
+        &:hover {
+            background-color: rgba($color-3, .5);
+
+            .icon-bar {
+                background-color: $light;
+            }
+        }
+    }
+}
+
+
+//Content pages float view
+.float-view {
+    @media (min-width: 1150px) {
+        .content-page {
+            height: 100%;
+            overflow: auto;
+            padding: 0px !important;
+            background-color: transparent !important;
+            position: relative;
+
+            article {
+                width: 100%;
+                min-height: 100%;
+                overflow: auto;
+                position: relative;
+                z-index: 1;
+
+                &:before {
+                    content: "";
+                    width: 50%;
+                    min-height: 100%;
+                    overflow: auto;
+                    background-color: white;
+                    display: block;
+                    margin: 0px;
+                    position: absolute;
+                    z-index: -1;
+                }
+            }
+
+            table {
+                float: left;
+                clear: left;
+                width: 47%;
+                margin-left: 1.5%;
+                margin-right: 1.5%;
+                background-color: white;
+                white-space: normal;
+
+                pre, code {
+                    white-space: normal;
+                }
+            }
+
+            blockquote,
+            p, ul, ol, dl, h2, h3, h4, h5, h6 {
+                float: left;
+                clear: left;
+                width: 47%;
+                margin-left: 1.5%;
+                margin-right: 1.5%;
+                background-color: white;
+
+                &:before {
+                    width: 100%;
+                    height: 10px;
+                    display: block;
+                    clear: both;
+                    //border-top: 1px solid $dark;
+                }
+
+                p, ul, ol, dl, h2, h3, h4, h5, h6, pre {
+                    float: none;
+                    display: block;
+                }
+            }
+
+            ul, ol {
+                li {
+                    margin-left: 30px;
+                }
+            }
+
+            pre {
+                float: left;
+                clear: right;
+                width: 47%;
+                border: none;
+                border-left: 10px solid white;
+                margin: 0px 0px 10px 0px;
+                padding: 0px 0px 0px 10px;
+            }
+        }
+    }
+}
+
+//Tables
+table {
+    width: 100%;
+    border-bottom: 1px solid $lines;
+    margin-bottom: 10px;
+
+    tr {
+        th, td {
+            padding: 8px;
+            line-height: 20px;
+            text-align: left;
+            vertical-align: top;
+            border-top: 1px solid $lines;
+            border-left: 1px solid $lines;
+            border-color: $lines !important;
+
+            &:last-child {
+                border-right: 1px solid $lines;
+            }
+        }
+    }
+}
+
+//Footer
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 15px;
+}
+
+//github ribbon
+#github-ribbon {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    z-index: 200;
+}
+
+.well {
+    &.well-sidebar {
+        background-color: transparent;
+        border-radius: 0;
+        border: none;
+
+        a {
+            font-size: 13px;
+            color: $light;
+            line-height: 28px;
+        }
+
+        .twitter {
+            hr {
+                border-bottom: none;
+                margin-left: -20px;
+                margin-right: -20px;
+            }
+        }
+    }
+}

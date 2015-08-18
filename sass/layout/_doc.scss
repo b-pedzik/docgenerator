@@ -1,0 +1,88 @@
+// Document -------------------------------------------------------------------
+
+// Border-box rules!
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+// Global styles
+html,
+body {
+  font-family: $font-stack;
+  background: tint($color-2, 97);
+  color: $color-2;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+}
+
+html {
+  font-size: (strip($base-font-size) / 16 * 100) * 1%;
+  min-height: 100%;
+  position: relative;
+}
+
+// MS viewport fix
+// http://msdn.microsoft.com/en-us/library/ie/hh869615(v=vs.85).aspx
+@-ms-viewport { width: device-width; }
+@viewport { width: device-width; }
+
+// MS touch-delay fix
+// http://msdn.microsoft.com/en-us/library/ie/hh772044(v=vs.85).aspx
+a,
+input,
+button { -ms-touch-action: none !important; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.clear,
+.clear_both {
+  clear: both;
+  float: none;
+}
+
+input,
+textarea,
+button {
+  outline: 0;
+}
+
+fieldset {
+  border: 0;
+}
+
+.hidden,
+.form .form-group .hidden {
+  display: none;
+}
+
+
+%container {
+  @extend %is-cf;
+  width: 100% - 1*$min-page-padding;
+  margin: 0 auto;
+
+  @include breakpoint(tablet) {
+    width: 100% - 1.5*$min-page-padding;
+  }
+
+  // Responsive images, yay!
+  img {
+    height: auto;
+    max-width: 100%;
+    height: auto !important;
+    // Removes vertical whitespace inside of container
+    vertical-align: middle;
+  }
+}
+

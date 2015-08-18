@@ -1,0 +1,217 @@
+.PageNavigation,
+.PageNavigation ul,
+.PageNavigation li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.PageHeader {
+	background: $color-4;
+	height: em(50px, 16px);
+	line-height: em(49px, 16px);
+	//width: em($sidebar-large);
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 300;
+	font-size: em(16px);
+	font-weight: bold;
+	padding-left: em(24px, 16px);
+	
+	&-logo {
+		color: $color-3;
+		
+		&:hover {
+			text-decoration: none;
+			color: $color-3;
+			opacity: 0.9;
+		}
+	}
+}
+
+.columns .left-column {
+	min-height: em(50px);
+}
+
+.PageNavigation {
+  width: 100%;
+  color: $color-3;
+	margin-top: em(50px);
+	display: none;
+	
+	@include breakpoint(tablet) {
+		display: block;	
+	}
+}
+
+.PageNavigation > li {
+  width: 100%;
+  border-bottom: 1px solid tint($color-2, 10);
+  position: relative;
+}
+
+.PageNavigation > li:hover > a {
+  background: tint($color-2, 5);
+}
+
+.PageNavigation > li > a {
+  display: block;
+  font-weight: 800;
+  color: $color-3;
+  padding: em(14px, 15px) em(24px, 15px);
+  display: block;
+  text-decoration: none;
+  line-height: em(20px, 15px);
+  z-index: 100;
+  position: relative;
+  transition: all 0.1s linear;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+}
+
+.PageNavigation > li.active, .PageNavigation > li.open {
+  > a {
+    background: tint($color-2, 10);
+  }
+}
+
+.PageNavigation li.open > .submenu {
+	display: block;
+}
+
+.PageNavigation > li .submenu {
+  font-size: em(13px, 14px);
+  overflow: hidden;
+  background: shade($color-2, 20);
+  display: none;
+	
+	.submenu a {
+		padding: em(12px, 13px) em(25px, 13px) em(12px, 13px) em(34px, 13px);
+
+		&:hover, &.active {
+		}
+	}
+}
+
+.PageNavigation > li .submenu {
+	a {
+	 display: block;
+	 color: $color-3;
+	 padding: em(12px, 13px) em(25px, 13px) em(12px, 13px) em(24px, 13px);
+	 display: block;
+	 text-decoration: none;
+	 line-height: em(16px, 13px);
+	 z-index: 100;
+	 position: relative;
+	 transition: all 0.1s linear;
+	}
+	
+	a:hover, li.active a {
+		 background: shade($color-2, 8);
+	}
+}
+
+.page-top {
+	overflow: hidden;
+	background: shade($color-3, 1);
+	border-bottom: 1px solid shade($color-3, 4);
+	padding: em(14px) em(20px);
+	font-size: em(12px);
+	
+	@media (min-width: 767px) {
+		font-size: em(14px);	
+	}
+	
+	.page-header {
+		float: left;
+		border-bottom: 0;
+		margin: 0;
+		padding: 0;
+		font-size: 1em;
+		line-height: 1.5em;
+		color: $color-1;
+		
+		a {
+			color: $color-2;
+		}
+	}
+	
+	.page-metadata {
+		float: right;
+		margin: 0;
+		font-size: 1em;
+		line-height: 1.5em;
+	}
+}
+
+.page-content {
+	padding: em(20px, 16px);
+	font-size: em(16px);
+	
+	h1:first-child {
+		margin-top: 0;
+	}
+	
+	h3 {
+		font-weight: bold;
+		line-height: 1.4em;
+		margin-bottom: 1em;
+	}
+	
+	h5 {
+		font-size: 1.1em;
+		line-height: 1.4em;
+		margin-bottom: 1em;
+	}
+	
+	a {
+		color: $color-4;
+	}
+	
+	blockquote {
+		font-size: 1em;
+		margin: 1em 0;
+		padding: 0.5em 1em;
+		background: shade($color-3, 2);
+	}
+	
+	p {
+		margin-bottom: 1.4em;
+		line-height: 1.4em;
+	}
+	
+	pre {
+		margin-bottom: 1em;
+	}
+	
+	ul {
+		margin-bottom: 1em;
+		line-height: 1.4em;
+		
+		li {
+			margin-bottom: 0.1em;
+		}
+	}
+}
+
+
+pre {
+    border: none;
+    background-color: shade($color-3, 5);
+    border-radius: 0;
+    padding: 10px;
+    margin-left: -20px;
+    padding-left: 30px;
+    margin-right: -20px;
+    padding-right: 30px;
+
+    code {
+        background: transparent;
+        border: none;
+    }
+}

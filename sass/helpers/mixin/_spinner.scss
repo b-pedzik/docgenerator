@@ -1,0 +1,20 @@
+// The Loading Spinner
+@mixin loading-spinner($color: #ffffff, $size: 30px, $thickness: 8px, $speed: 0.75s) {
+  animation: rotate-forever $speed infinite linear 0ms;
+  width: $size;
+  height: $size;
+  border: $thickness solid $color;
+  border-right-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+@keyframes rotate-forever {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

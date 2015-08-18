@@ -1,0 +1,8 @@
+{
+    "favicon": "<theme_url>img/favicon.png",
+    "css": ["<theme_url>css/isystems.css", "<theme_url>css/jquery.fancybox.css"],
+    "fonts": [],
+    "js": ["<theme_url>js/jquery.fancybox.pack.js"],
+    "require-jquery": true,
+    "bootstrap-js": false
+}

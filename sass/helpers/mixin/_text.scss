@@ -1,0 +1,20 @@
+@mixin font-face-helper($familyName, $filePath, $fontWeight: normal, $fontStyle: normal) {
+	@font-face {
+		font-family: $familyName;
+		src: url(#{$filePath}.eot);
+		src: url(#{$filePath}.eot?#iefix) format('embedded-opentype'),
+		url(#{$filePath}.woff2) format('woff2'),
+		url(#{$filePath}.woff) format('woff'),
+		url(#{$filePath}.ttf) format('truetype');
+		font-weight: $fontWeight;
+		font-style: $fontStyle;
+		text-rendering: optimizeLegibility;
+	}
+}
+
+// Text-overflow helper
+@mixin truncateText($overflow: ellipsis) {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: $overflow; // values are: clip, ellipsis, or a string
+}

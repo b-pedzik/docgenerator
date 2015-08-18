@@ -1,0 +1,6 @@
+@import 'layout/variables';
+@import 'helpers/mixin/text';
+
+@include font-face-helper('Open Sans', $font-path + 'opensans-bold', 700);
+@include font-face-helper('Open Sans', $font-path + 'opensans-light', 300);
+@include font-face-helper('Open Sans', $font-path + 'opensans-regular', 400);
