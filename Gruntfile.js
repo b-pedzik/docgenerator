@@ -2,8 +2,8 @@ module.exports = function (grunt) {
     'use strict';
 
     grunt.loadNpmTasks('grunt-php');
-    grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-sass');
 
     grunt.initConfig({
         php: {
@@ -15,24 +15,20 @@ module.exports = function (grunt) {
                 }
             }
         },
-        less: {
-            development: {
-                options: {
-                    cleancss: true,
-                    report: 'min'
-                },
-                files: {
-                    "css/daux-blue.min.css": "less/daux-blue.less",
-                    "css/daux-green.min.css": "less/daux-green.less",
-                    "css/daux-navy.min.css": "less/daux-navy.less",
-                    "css/daux-red.min.css": "less/daux-red.less"
-                }
+        sass: {
+          development: {
+            options: {
+                sourceMap: true
+            },
+            files: {
+                'templates/default/themes/isystems/css/isystems.css': 'sass/main.scss'
             }
+          }
         },
         watch: {
             scripts: {
-                files: ['less/**/*.less'],
-                tasks: ['less'],
+                files: ['sass/**/*.scss'],
+                tasks: ['sass'],
                 options: {
                     nospawn: true
                 },
@@ -40,6 +36,5 @@ module.exports = function (grunt) {
         },
     });
 
-    //grunt.registerTask('default', ['less', 'watch']);
     grunt.registerTask('default', ['php']);
 };

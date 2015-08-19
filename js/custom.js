@@ -7,14 +7,20 @@ $(function () {
 
     $('table').addClass('table');
     $('#menu-spinner-button').click(function () {
-        $('#sub-nav-collapse').slideToggle();
+        $('.PageNavigation').slideToggle();
     });
 
     $(window).resize(function () {
         // Remove transition inline style on large screens
         if ($(window).width() >= 768)
-            $('#sub-nav-collapse').removeAttr('style');
+            $('.PageNavigation').removeAttr('style');
     });
+    
+    $('.page-content a[href$=".gif"], .page-content a[href$=".jpg"], .page-content a[href$=".png"], .page-content a[href$=".bmp"]').fancybox();
+    
+    $('a').filter(function() {
+       return this.hostname && this.hostname !== location.hostname;
+    }).attr('target', '_blank');
 });
 
 //Fix GitHub Ribbon overlapping Scrollbar
